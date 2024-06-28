@@ -1,75 +1,75 @@
-let NumeroSecreto = 0;
-let Contador = 0;
-let listaNumeroGenerado= [];
-let NumeroMaximo = 10;
+// let NumeroSecreto = 0;
+// let Contador = 0;
+// let listaNumeroGenerado= [];
+// let NumeroMaximo = 10;
 
-function AsignarTexto(elemento, texto) {
-    let Parrafo = document.querySelector(elemento);
-    Parrafo.innerHTML = texto;
-    return;
-}
+// function AsignarTexto(elemento, texto) {
+//     let Parrafo = document.querySelector(elemento);
+//     Parrafo.innerHTML = texto;
+//     return;
+// }
 
-function GenerarNumeroAleatorio(){
-    let NAletorio = Math.floor(Math.random() * NumeroMaximo) + 1;
-    console.log(NAletorio);
-     console.log(listaNumeroGenerado);
+// function GenerarNumeroAleatorio(){
+//     let NAletorio = Math.floor(Math.random() * NumeroMaximo) + 1;
+//     console.log(NAletorio);
+//     console.log(listaNumeroGenerado);
 
-     if(listaNumeroGenerado.length ==NumeroMaximo) {
-         alert('Todos los numeros han sido sorteados.')
-         document.getElementById('intentar').setAttribute('disabled','true');
-         document.getElementById('NumeroIntento').setAttribute('disabled','true');
-         AsignarTexto('p',``);
-         AsignarTexto('h1','Fin del Juego');
-     }
-     else if(listaNumeroGenerado.includes(NAletorio)){
-         return GenerarNumeroAleatorio();
-     }
-     else{
-         listaNumeroGenerado.push(NAletorio);
-         return NAletorio;
-     }
+//     if(listaNumeroGenerado.length ==NumeroMaximo) {
+//         alert('Todos los numeros han sido sorteados.')
+//         document.getElementById('intentar').setAttribute('disabled','true');
+//         document.getElementById('NumeroIntento').setAttribute('disabled','true');
+//         AsignarTexto('p',``);
+//         AsignarTexto('h1','Fin del Juego');
+//     }
+//     else if(listaNumeroGenerado.includes(NAletorio)){
+//         return GenerarNumeroAleatorio();
+//     }
+//     else{
+//         listaNumeroGenerado.push(NAletorio);
+//         return NAletorio;
+//     }
     
- }
+// }
 
- function VerificarIntento(){
-     let Intento =  parseInt(document.getElementById('NumeroIntento').value);
+// function VerificarIntento(){
+//     let Intento =  parseInt(document.getElementById('NumeroIntento').value);
 
-     if(Intento == NumeroSecreto){
-         AsignarTexto('p',`Felicidades adivinaste el numero secreto en ${Contador} ${Contador == 1 ? 'intento' : 'intentos'}`);
-         document.getElementById('reiniciar').removeAttribute('disabled');
-     }
-     else {   
-         if(Intento > NumeroSecreto){
-             AsignarTexto('p','El numero secreto es menor');
-         }
-         else{
-             AsignarTexto('p','El numero secreto es mayor');
-         }
-         Contador++;
-         limpiarCaja();
-     }
+//     if(Intento == NumeroSecreto){
+//         AsignarTexto('p',`Felicidades adivinaste el numero secreto en ${Contador} ${Contador == 1 ? 'intento' : 'intentos'}`);
+//         document.getElementById('reiniciar').removeAttribute('disabled');
+//     }
+//     else {   
+//         if(Intento > NumeroSecreto){
+//             AsignarTexto('p','El numero secreto es menor');
+//         }
+//         else{
+//             AsignarTexto('p','El numero secreto es mayor');
+//         }
+//         Contador++;
+//         limpiarCaja();
+//     }
    
- }
+// }
 
- function funcionesDeInicio(){
-     AsignarTexto('p',`Digite un numero del 1 al ${NumeroMaximo}`);
-     AsignarTexto('h1','Adivina el mumero secreto');
-     NumeroSecreto = GenerarNumeroAleatorio();
-     Contador=1;
- }
+// function funcionesDeInicio(){
+//     AsignarTexto('p',`Digite un numero del 1 al ${NumeroMaximo}`);
+//     AsignarTexto('h1','Adivina el mumero secreto');
+//     NumeroSecreto = GenerarNumeroAleatorio();
+//     Contador=1;
+// }
 
 
- function limpiarCaja(){
-     document.getElementById('NumeroIntento').value = '';
- }
+// function limpiarCaja(){
+//     document.getElementById('NumeroIntento').value = '';
+// }
 
- function ReiniciarJuego(){
-     funcionesDeInicio();
-     limpiarCaja();
-     document.getElementById('reiniciar').setAttribute('disabled','true');
- }
+// function ReiniciarJuego(){
+//     funcionesDeInicio();
+//     limpiarCaja();
+//     document.getElementById('reiniciar').setAttribute('disabled','true');
+// }
 
- funcionesDeInicio();
+// funcionesDeInicio();
 
 
 
@@ -205,34 +205,34 @@ function GenerarNumeroAleatorio(){
 
 
 
-//let listaGenerica = [1,2,3,4];
-//let LenguajesDeProgramacion=['C','C++','Kotlin','Python'];
+let listaGenerica = [1,2,3,4];
+let LenguajesDeProgramacion=['C','C++','Kotlin','Python'];
 
-//LenguajesDeProgramacion.push('Java', 'Ruby', 'GoLang');
+LenguajesDeProgramacion.push('Java', 'Ruby', 'GoLang');
 
-//function MostrarListaLenguajes(){
-//    console.log(LenguajesDeProgramacion);   
-//}
-
-
-//function MostrarListaLenguajesInverso(){
-  //  console.log(LenguajesDeProgramacion.reverse());   
-//}
-
-//function promedio(){
-//  let cantidad = listaGenerica.length;
-//    let suma = listaGenerica.reduce((a,b) => a+b);
-//    let promedio = suma / cantidad;
-//    console.log(promedio);
-//}
-
-//function MayorYMenor(){
-
-//}
+function MostrarListaLenguajes(){
+    console.log(LenguajesDeProgramacion);   
+}
 
 
-//promedio();
+function MostrarListaLenguajesInverso(){
+    console.log(LenguajesDeProgramacion.reverse());   
+}
 
-//MostrarListaLenguajes();
+function promedio(){
+    let cantidad = listaGenerica.length;
+    let suma = listaGenerica.reduce((a,b) => a+b);
+    let promedio = suma / cantidad;
+    console.log(promedio);
+}
 
-//MostrarListaLenguajesInverso();
+function MayorYMenor(){
+
+}
+
+
+promedio();
+
+MostrarListaLenguajes();
+
+MostrarListaLenguajesInverso();
