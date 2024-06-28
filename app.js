@@ -231,8 +231,8 @@ function GenerarNumeroAleatorio(){
 //}
 
 
-promedio();
+//promedio();
 
-MostrarListaLenguajes();
+//MostrarListaLenguajes();
 
-MostrarListaLenguajesInverso();
+//MostrarListaLenguajesInverso();
